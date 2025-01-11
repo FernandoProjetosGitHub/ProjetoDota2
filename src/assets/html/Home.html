@@ -16,11 +16,28 @@
 
 <body>
   <div id="menu">
-    <nav class="menuItemLogo"><a href=""><img src="../images/dota2_logo_symbol.png" alt="" srcset=""></a></nav>
-    <nav class="menuItem"><a href="">Jogo</a></nav>
-    <nav class="menuItem"><a href="">Herois</a></nav>
-    <nav class="menuItem"><a href="">Novidades</a></nav>
-    <nav class="menuItem"><a href="">Esports</a></nav>
+    <div id="navTotal">
+      <nav class="menuItemLogo"><a href=""><img src="../images/dota2_logo_symbol.png" alt="" srcset=""></a></nav>
+      <nav class="menuItem"><a href="">Jogo</a></nav>
+      <nav class="menuItem"><a href="">Herois</a></nav>
+      <nav class="menuItem"><a href="">Novidades</a></nav>
+      <nav class="menuItem"><a href="">Esports</a></nav>
+    </div>
+    <div>
+      <h1>INICIAR SESSÃO</h1>
+      <h1>Escolha seu idioma</h1>
+    
+    <form action="/mudar-idioma" method="GET">
+        <label for="idiomas">Selecione o idioma:</label>
+        <select name="idiomas" id="idiomas">
+            <option value="pt-br">Português (Brasil)</option>
+            <option value="en">Inglês</option>
+            <option value="es">Espanhol</option>
+            <option value="fr">Francês</option>
+            <option value="de">Alemão</option>
+        </select>
+    </form>
+    </div>
   </div>
 
   <header>
@@ -34,6 +51,10 @@
       <h2><a href="">JOGUE GRATUITAMENTE</a></h2>
       <P>BAIXE NO STEAM</P>
     </div>
+      <div class="ultimasNovidades">
+        <h3>ÚLTIMAS NOVIDADES</h3>
+        <P><a href="">VER TODAS</a></P>
+      </div>
   </header>
   <article>
     <h1>JUNTE-SE À <br>
@@ -45,6 +66,33 @@
       <p><a href="">CONFIRA AS NOVIDADES</a></p>
     </div>
   </article>
+  <section>
+    <h1>QUEM VOCÊ</h1>
+    <h1>ESCOLHERÁ</h1>
+    <P>De engenhosos magos a brutamontes destemidos, passando por rebeldes astutos, a gama de heróis do Dota 2 é enorme e incrivelmente diversa. Lance habilidades incríveis e Ultimates devastadoras no seu caminho para a vitória.</P>
+    <p class="verHerois" ><a href="">VER TODOS OS HERÓIS</a></p>
+  </section>
+  <section>
+    <h1>O CIRCUITO</h1>
+    <h1>PROFISSIONAL <br> DE DOTA</h1>
+    <p>Quando não estiver subindo nas classificações, você pode aprender com os melhores: o Circuito Profissional de Dota apresenta uma competição do mais alto nível de Dota 2, com transmissão regular pelo cliente do jogo, na Twitch e Steam.TV. Tudo isso culmina no maior campeonato de eSports do mundo, o International — um evento profissional de Dota 2 que você não pode deixar de acompanhar.</p>
+  </section>
+  <div>
+    <h1>JUNTE-SE À</h1>
+    <h1>BATALHA</h1>
+    <p class="jogueGratisAgora"><a href="">JOGUE GRATUITAMENTE AGORA</a></p>
+  </div>
+  <footer>
+    <div class="footer">
+      <div class="footerLogoValve">
+        <img src="" alt="" srcset="">
+      </div>
+      <div class="footerLogoDota" >
+        <img src="" alt="" srcset="">
+      </div>
+      <p>Dota e o logotipo do Dota são marcas e/ou marcas registradas da Valve Corporation. 2024 Valve Corporation, todos os direitos reservados.</p>
+    </div>
+  </footer>
 
   <script src="../js/functions.js"></script>
 </body>
