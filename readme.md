@@ -1,6 +1,6 @@
 # Projeto Dota 2
 
-Projeto colaborativo para reimaginar o front-end referente ao site do jogo Dota 2.
+Projeto colaborativo para reimaginar o front-end referente ao site do jogo Dota 2, evoluindo as tecnologias de acordo com o aprendizado.
 
 ## Contribuidores:
 
