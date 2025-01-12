@@ -5,8 +5,9 @@ Projeto colaborativo para reimaginar o front-end referente ao site do jogo Dota 
 ## Contribuidores:
 
 As seguintes pessoas estão contribuindo para este projeto:
-- [Gabriel](https://github.com/arkfiend)
 - [Fernando](https://github.com/FernandoProjetosGitHub)
+- [Gabriel](https://github.com/arkfiend)
+- [Wesley](https://github.com/wesleyjp)
 
 ## Tecnologias Utilizadas
 
