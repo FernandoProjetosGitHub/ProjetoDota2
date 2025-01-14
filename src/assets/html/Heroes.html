@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dota2</title>
+  <title>Hroes</title>
   <link rel="shortcut icon" href="https://www.dota2.com/favicon.ico" type="assets/image/x-icon">
   <link rel="stylesheet" href="../css/Nav.css">
   <link rel="stylesheet" href="../css/Header.css">
@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <div id="menu">
+  <!-- <div id="menu">
     <div id="navTotal">
       <nav class="menuItemLogo"><a href=""><img src="../images/dota2_logo_symbol.png" alt="" srcset=""></a></nav>
       <nav class="menuItem"><a href="">Jogo</a></nav>
@@ -52,30 +52,13 @@
         <h3>ÚLTIMAS NOVIDADES</h3>
         <P><a href="">VER TODAS</a></P>
       </div>
-  </header>
-  <article>
-    <h1>JUNTE-SE À <br>
-      BATALHA DOS <br> 
-      ANCESTRAIS
-    </h1>
-    <p>Todos os dias, milhões de jogadores ao redor do mundo entram na batalha como um dos mais de 100 heróis de Dota em uma batalha entre equipes de cinco jogadores.  Dota 2 é o jogo multijogador de ação e estratégia em tempo real mais profundo já feito, e há sempre uma nova estratégia ou tática a ser descoberta.  É completamente gratuito para jogar e assim sempre será — comece a defender o seu Ancestral já.</p>
-    <div class="confiraNovidades">
-      <p><a href="">CONFIRA AS NOVIDADES</a></p>
-    </div>
-  </article>
-  <section>
-    <h1>QUEM VOCÊ</h1>
-    <h1>ESCOLHERÁ</h1>
-    <P>De engenhosos magos a brutamontes destemidos, passando por rebeldes astutos, a gama de heróis do Dota 2 é enorme e incrivelmente diversa. Lance habilidades incríveis e Ultimates devastadoras no seu caminho para a vitória.</P>
-    <p class="verHerois" ><a href="">VER TODOS OS HERÓIS</a></p>
-  </section>
-  <section>
-    <h1>O CIRCUITO</h1>
-    <h1>PROFISSIONAL <br> DE DOTA</h1>
-    <p>Quando não estiver subindo nas classificações, você pode aprender com os melhores: o Circuito Profissional de Dota apresenta uma competição do mais alto nível de Dota 2, com transmissão regular pelo cliente do jogo, na Twitch e Steam.TV. Tudo isso culmina no maior campeonato de eSports do mundo, o International — um evento profissional de Dota 2 que você não pode deixar de acompanhar.</p>
-  </section>
+  </header> -->
 
-  <div>
+  <div style="display: flex; justify-content: center; align-items: center;" class="grid-herois">
+    <div id="heroesDiv"></div>  
+  </div>
+
+  <!-- <div>
     <h1>JUNTE-SE À</h1>
     <h1>BATALHA</h1>
     <p class="jogueGratisAgora"><a href="">JOGUE GRATUITAMENTE AGORA</a></p>
@@ -90,8 +73,32 @@
       </div>
       <p>Dota e o logotipo do Dota são marcas e/ou marcas registradas da Valve Corporation. 2024 Valve Corporation, todos os direitos reservados.</p>
     </div>
-  </footer>
+  </footer> -->
 
-  <script src="../js/functions.js"></script>
 </body>
+
+<script type="module">
+  import { Heroes } from '../js/script.js';
+  var heroesObj = new Heroes();
+  const allHeroes = heroesObj.allHeroes();
+
+  // Função que roda no inicio do carregamentgo da página
+  window.onload = function() {
+    let block = ``;
+    for(var indice = 0; indice < allHeroes.length; indice++){
+      let heroiAtual = allHeroes[indice];
+      block = block + `
+        <div style="border: 1px solid red">
+          <p>${heroiAtual.nome}</p>
+          <img src="${heroiAtual.img}" alt="hero"/>
+        </div>
+      `
+    }
+    
+    let heroesDiv = document.getElementById("heroesDiv");
+    heroesDiv.insertAdjacentHTML('beforeend', block);
+
+  };
+
+</script>
 </html>
