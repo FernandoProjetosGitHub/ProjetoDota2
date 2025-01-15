@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heroes</title>
+  <link rel="shortcut icon" href="https://www.dota2.com/favicon.ico" type="assets/image/x-icon">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    @font-face {
+      font-family: 'Reaver', sans-serif;
+      src: url(../fonts/Reaver-SemiBold.woff) format('woff');
+    }
+
+    body {
+      font-family: 'Reaver', sans-serif;
+      background-color: #333;
+      color: white;
+    }
+
+    #menu {
+      display: flex;
+      justify-content: left;
+      margin: 10px 0;
+      padding: 10px;
+      color: white;
+      border-radius: 5px;
+      box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .menuItem {
+      margin: 0 10px;
+      padding: 5px;
+      font-family: 'Reaver', sans-serif;
+      font-size: 20px;
+    }
+
+    .menuItemLogo img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+
+    header {
+      color: white;
+      text-align: left;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 12px;
+      font-weight: normal;
+    }
+
+    .downloadSteam {
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-right: 10px;
+      width: 350px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="menu">
+    <div id="navTotal">
+      <nav class="menuItemLogo"><a href=""><img src="../images/dota2_logo_symbol.png" alt="" srcset=""></a></nav>
+      <nav class="menuItem"><a href="">Jogo</a></nav>
+      <nav class="menuItem"><a href="">Herois</a></nav>
+      <nav class="menuItem"><a href="">Novidades</a></nav>
+      <nav class="menuItem"><a href="">Esports</a></nav>
+    </div>
+    <div>
+      <p>INICIAR SESSÃO</p>
+      <p>Escolha seu idioma</p>
+
+      <form action="/mudar-idioma" method="GET">
+        <label for="idiomas">Selecione o idioma:</label>
+        <select name="idiomas" id="idiomas">
+          <option value="pt-br">Português (Brasil)</option>
+          <option value="en">Inglês</option>
+          <option value="es">Espanhol</option>
+          <option value="fr">Francês</option>
+          <option value="de">Alemão</option>
+        </select>
+      </form>
+    </div>
+  </div>
+  <header>
+    <h1>ESCOLHA O SEU HERÓI</h1>
+    <P>De engenhosos magos a brutamontes destemidos, passando por rebeldes astutos, a gama de heróis do Dota 2 é
+      enorme e incrivelmente diversa. Lance habilidades incríveis e Ultimates devastadoras no seu caminho para a
+      vitória.</P>
+    <div>
+      <p>FILTRAR HERÓIS</p>
+      <p>ATRIBUTO</p>
+      <P>COMPLEXIDADE</P>
+      <input type="search" name="search" id="search">
+
+    </div>
+  </header>
+  <section>
+
+    <p class="hero" id="abaddon"><a href="#">Abaddon</a></p>
+    <p class="hero" id="alchemist"><a href="#">Alchemist</a></p>
+    <p class="hero" id="ancient-apparition"><a href="#">Ancient Apparition</a></p>
+    <p class="hero" id="anti-mage"><a href="#">Anti-Mage</a></p>
+    <p class="hero" id="arc-warden"><a href="#">Arc Warden</a></p>
+    <p class="hero" id="axe"><a href="#">Axe</a></p>
+    <p class="hero" id="bane"><a href="#">Bane</a></p>
+    <p class="hero" id="batrider"><a href="#">Batrider</a></p>
+    <p class="hero" id="beastmaster"><a href="#">Beastmaster</a></p>
+    <p class="hero" id="bloodseeker"><a href="#">Bloodseeker</a></p>
+    <p class="hero" id="bounty-hunter"><a href="#">Bounty Hunter</a></p>
+    <p class="hero" id="brewmaster"><a href="#">Brewmaster</a></p>
+    <p class="hero" id="bristleback"><a href="#">Bristleback</a></p>
+    <p class="hero" id="broodmother"><a href="#">Broodmother</a></p>
+    <p class="hero" id="centaur-warrunner"><a href="#">Centaur Warrunner</a></p>
+    <p class="hero" id="chaos-knight"><a href="#">Chaos Knight</a></p>
+    <p class="hero" id="chen"><a href="#">Chen</a></p>
+    <p class="hero" id="clinkz"><a href="#">Clinkz</a></p>
+    <p class="hero" id="clockwerk"><a href="#">Clockwerk</a></p>
+    <p class="hero" id="crystal-maiden"><a href="#">Crystal Maiden</a></p>
+    <p class="hero" id="dark-seer"><a href="#">Dark Seer</a></p>
+    <p class="hero" id="dark-willow"><a href="#">Dark Willow</a></p>
+    <p class="hero" id="dawnbreaker"><a href="#">Dawnbreaker</a></p>
+    <p class="hero" id="dazzle"><a href="#">Dazzle</a></p>
+    <p class="hero" id="death-prophet"><a href="#">Death Prophet</a></p>
+    <p class="hero" id="disruptor"><a href="#">Disruptor</a></p>
+    <p class="hero" id="doom"><a href="#">Doom</a></p>
+    <p class="hero" id="dragon-knight"><a href="#">Dragon Knight</a></p>
+    <p class="hero" id="drow-ranger"><a href="#">Drow Ranger</a></p>
+    <p class="hero" id="earth-spirit"><a href="#">Earth Spirit</a></p>
+    <p class="hero" id="earthshaker"><a href="#">Earthshaker</a></p>
+    <p class="hero" id="elder-titan"><a href="#">Elder Titan</a></p>
+    <p class="hero" id="ember-spirit"><a href="#">Ember Spirit</a></p>
+    <p class="hero" id="enchantress"><a href="#">Enchantress</a></p>
+    <p class="hero" id="enigma"><a href="#">Enigma</a></p>
+    <p class="hero" id="faceless-void"><a href="#">Faceless Void</a></p>
+    <p class="hero" id="grimstroke"><a href="#">Grimstroke</a></p>
+    <p class="hero" id="gyrocopter"><a href="#">Gyrocopter</a></p>
+    <p class="hero" id="hoodwink"><a href="#">Hoodwink</a></p>
+    <p class="hero" id="huskar"><a href="#">Huskar</a></p>
+    <p class="hero" id="invoker"><a href="#">Invoker</a></p>
+    <p class="hero" id="io"><a href="#">Io</a></p>
+    <p class="hero" id="jakiro"><a href="#">Jakiro</a></p>
+    <p class="hero" id="juggernaut"><a href="#">Juggernaut</a></p>
+    <p class="hero" id="keeper-of-the-light"><a href="#">Keeper of the Light</a></p>
+    <p class="hero" id="kunkka"><a href="#">Kunkka</a></p>
+    <p class="hero" id="legion-commander"><a href="#">Legion Commander</a></p>
+    <p class="hero" id="leshrac"><a href="#">Leshrac</a></p>
+    <p class="hero" id="lich"><a href="#">Lich</a></p>
+    <p class="hero" id="lifestealer"><a href="#">Lifestealer</a></p>
+    <p class="hero" id="lina"><a href="#">Lina</a></p>
+    <p class="hero" id="lion"><a href="#">Lion</a></p>
+    <p class="hero" id="lone-druid"><a href="#">Lone Druid</a></p>
+    <p class="hero" id="luna"><a href="#">Luna</a></p>
+    <p class="hero" id="lycan"><a href="#">Lycan</a></p>
+    <p class="hero" id="magnus"><a href="#">Magnus</a></p>
+    <p class="hero" id="marci"><a href="#">Marci</a></p>
+    <p class="hero" id="mars"><a href="#">Mars</a></p>
+    <p class="hero" id="medusa"><a href="#">Medusa</a></p>
+    <p class="hero" id="meepo"><a href="#">Meepo</a></p>
+    <p class="hero" id="mirana"><a href="#">Mirana</a></p>
+    <p class="hero" id="monkey-king"><a href="#">Monkey King</a></p>
+    <p class="hero" id="morphling"><a href="#">Morphling</a></p>
+    <p class="hero" id="naga-siren"><a href="#">Naga Siren</a></p>
+    <p class="hero" id="natures-prophet"><a href="#">Nature's Prophet</a></p>
+    <p class="hero" id="necrophos"><a href="#">Necrophos</a></p>
+    <p class="hero" id="night-stalker"><a href="#">Night Stalker</a></p>
+    <p class="hero" id="nyx-assassin"><a href="#">Nyx Assassin</a></p>
+    <p class="hero" id="ogre-magi"><a href="#">Ogre Magi</a></p>
+    <p class="hero" id="omniknight"><a href="#">Omniknight</a></p>
+    <p class="hero" id="oracle"><a href="#">Oracle</a></p>
+    <p class="hero" id="outworld-destroyer"><a href="#">Outworld Destroyer</a></p>
+    <p class="hero" id="pangolier"><a href="#">Pangolier</a></p>
+    <p class="hero" id="phantom-assassin"><a href="#">Phantom Assassin</a></p>
+    <p class="hero" id="phantom-lancer"><a href="#">Phantom Lancer</a></p>
+    <p class="hero" id="phoenix"><a href="#">Phoenix</a></p>
+    <p class="hero" id="puck"><a href="#">Puck</a></p>
+    <p class="hero" id="pudge"><a href="#">Pudge</a></p>
+    <p class="hero" id="pugna"><a href="#">Pugna</a></p>
+    <p class="hero" id="queen-of-pain"><a href="#">Queen of Pain</a></p>
+    <p class="hero" id="razor"><a href="#">Razor</a></p>
+    <p class="hero" id="riki"><a href="#">Riki</a></p>
+    <p class="hero" id="ringmaster"><a href="#">RingMaster</a></p>
+    <p class="hero" id="rubick"><a href="#">Rubick</a></p>
+    <p class="hero" id="sand-king"><a href="#">Sand King</a></p>
+    <p class="hero" id="shadow-demon"><a href="#">Shadow Demon</a></p>
+    <p class="hero" id="shadow-fiend"><a href="#">Shadow Fiend</a></p>
+    <p class="hero" id="shadow-shaman"><a href="#">Shadow Shaman</a></p>
+    <p class="hero" id="silencer"><a href="#">Silencer</a></p>
+    <p class="hero" id="skywrath-mage"><a href="#">Skywrath Mage</a></p>
+    <p class="hero" id="slardar"><a href="#">Slardar</a></p>
+    <p class="hero" id="slark"><a href="#">Slark</a></p>
+    <p class="hero" id="snapfire"><a href="#">Snapfire</a></p>
+    <p class="hero" id="sniper"><a href="#">Sniper</a></p>
+    <p class="hero" id="spectre"><a href="#">Spectre</a></p>
+    <p class="hero" id="spirit-breaker"><a href="#">Spirit Breaker</a></p>
+    <p class="hero" id="storm-spirit"><a href="#">Storm Spirit</a></p>
+    <p class="hero" id="sven"><a href="#">Sven</a></p>
+    <p class="hero" id="techies"><a href="#">Techies</a></p>
+    <p class="hero" id="templar-assassin"><a href="#">Templar Assassin</a></p>
+    <p class="hero" id="terrorblade"><a href="#">Terrorblade</a></p>
+    <p class="hero" id="tidehunter"><a href="#">Tidehunter</a></p>
+    <p class="hero" id="timbersaw"><a href="#">Timbersaw</a></p>
+    <p class="hero" id="tinker"><a href="#">Tinker</a></p>
+    <p class="hero" id="tiny"><a href="#">Tiny</a></p>
+    <p class="hero" id="treant-protector"><a href="#">Treant Protector</a></p>
+    <p class="hero" id="troll-warlord"><a href="#">Troll Warlord</a></p>
+    <p class="hero" id="tusk"><a href="#">Tusk</a></p>
+    <p class="hero" id="underlord"><a href="#">Underlord</a></p>
+    <p class="hero" id="undying"><a href="#">Undying</a></p>
+    <p class="hero" id="ursa"><a href="#">Ursa</a></p>
+    <p class="hero" id="vengeful-spirit"><a href="#">Vengeful Spirit</a></p>
+    <p class="hero" id="venomancer"><a href="#">Venomancer</a></p>
+    <p class="hero" id="viper"><a href="#">Viper</a></p>
+    <p class="hero" id="visage"><a href="#">Visage</a></p>
+    <p class="hero" id="void-spirit"><a href="#">Void Spirit</a></p>
+    <p class="hero" id="warlock"><a href="#">Warlock</a></p>
+    <p class="hero" id="weaver"><a href="#">Weaver</a></p>
+    <p class="hero" id="windranger"><a href="#">Windranger</a></p>
+    <p class="hero" id="winter-wyvern"><a href="#">Winter Wyvern</a></p>
+    <p class="hero" id="witch-doctor"><a href="#">Witch Doctor</a></p>
+    <p class="hero" id="wraith-king"><a href="#">Wraith King</a></p>
+    <p class="hero" id="zeus"><a href="#">Zeus</a></p>
+  </section>
+  <footer>
+    <div class="footer">
+      <div class="footerLogoValve">
+        <img src="" alt="" srcset="">
+      </div>
+      <div class="footerLogoDota">
+        <img src="" alt="" srcset="">
+      </div>
+      <p>Dota e o logotipo do Dota são marcas e/ou marcas registradas da Valve Corporation. 2024 Valve
+        Corporation, todos os direitos reservados.</p>
+    </div>
+  </footer>
+  <script src="../js/functions.js"></script>
+</body>
+
+</html>
