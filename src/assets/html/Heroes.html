@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
   <title>Heroes</title>
   <link rel="shortcut icon" href="https://www.dota2.com/favicon.ico" type="assets/image/x-icon">
   <style>
@@ -79,6 +80,17 @@
 
 <body>
   <div id="menu">
+=======
+  <title>Hroes</title>
+  <link rel="shortcut icon" href="https://www.dota2.com/favicon.ico" type="assets/image/x-icon">
+  <link rel="stylesheet" href="../css/Nav.css">
+  <link rel="stylesheet" href="../css/Header.css">
+  <link rel="stylesheet" href="../css/Article.css">
+</head>
+
+<body>
+  <!-- <div id="menu">
+>>>>>>> 324d1fdcaebf0c54d85ac4aa43011c1aaa0fb661
     <div id="navTotal">
       <nav class="menuItemLogo"><a href=""><img src="../images/dota2_logo_symbol.png" alt="" srcset=""></a></nav>
       <nav class="menuItem"><a href="">Jogo</a></nav>
@@ -87,6 +99,7 @@
       <nav class="menuItem"><a href="">Esports</a></nav>
     </div>
     <div>
+<<<<<<< HEAD
       <p>INICIAR SESSÃO</p>
       <p>Escolha seu idioma</p>
 
@@ -241,11 +254,56 @@
     <p class="hero" id="wraith-king"><a href="#">Wraith King</a></p>
     <p class="hero" id="zeus"><a href="#">Zeus</a></p>
   </section>
+=======
+      <h1>INICIAR SESSÃO</h1>
+      <h1>Escolha seu idioma</h1>
+    
+    <form action="/mudar-idioma" method="GET">
+        <label for="idiomas">Selecione o idioma:</label>
+        <select name="idiomas" id="idiomas">
+            <option value="pt-br">Português (Brasil)</option>
+            <option value="en">Inglês</option>
+            <option value="es">Espanhol</option>
+            <option value="fr">Francês</option>
+            <option value="de">Alemão</option>
+        </select>
+    </form>
+    </div>
+  </div>
+
+  <header>
+    <h1>"UMA OBRA- <br>
+      PRIMA <br> 
+      MODERNA <br> 
+      MULTIJOGADORA." <br>
+    </h1>
+    <p><strong class="destructoid">-DESTRUCTOID</strong></p>
+    <div class="downloadSteam">
+      <h2><a href="">JOGUE GRATUITAMENTE</a></h2>
+      <P>BAIXE NO STEAM</P>
+    </div>
+      <div class="ultimasNovidades">
+        <h3>ÚLTIMAS NOVIDADES</h3>
+        <P><a href="">VER TODAS</a></P>
+      </div>
+  </header> -->
+
+  <div style="display: flex; justify-content: center; align-items: center;" class="grid-herois">
+    <div id="heroesDiv"></div>  
+  </div>
+
+  <!-- <div>
+    <h1>JUNTE-SE À</h1>
+    <h1>BATALHA</h1>
+    <p class="jogueGratisAgora"><a href="">JOGUE GRATUITAMENTE AGORA</a></p>
+  </div>
+>>>>>>> 324d1fdcaebf0c54d85ac4aa43011c1aaa0fb661
   <footer>
     <div class="footer">
       <div class="footerLogoValve">
         <img src="" alt="" srcset="">
       </div>
+<<<<<<< HEAD
       <div class="footerLogoDota">
         <img src="" alt="" srcset="">
       </div>
@@ -256,4 +314,39 @@
   <script src="../js/functions.js"></script>
 </body>
 
+=======
+      <div class="footerLogoDota" >
+        <img src="" alt="" srcset="">
+      </div>
+      <p>Dota e o logotipo do Dota são marcas e/ou marcas registradas da Valve Corporation. 2024 Valve Corporation, todos os direitos reservados.</p>
+    </div>
+  </footer> -->
+
+</body>
+
+<script type="module">
+  import { Heroes } from '../js/script.js';
+  var heroesObj = new Heroes();
+  const allHeroes = heroesObj.allHeroes();
+
+  // Função que roda no inicio do carregamentgo da página
+  window.onload = function() {
+    let block = ``;
+    for(var indice = 0; indice < allHeroes.length; indice++){
+      let heroiAtual = allHeroes[indice];
+      block = block + `
+        <div style="border: 1px solid red">
+          <p>${heroiAtual.nome}</p>
+          <img src="${heroiAtual.img}" alt="hero"/>
+        </div>
+      `
+    }
+    
+    let heroesDiv = document.getElementById("heroesDiv");
+    heroesDiv.insertAdjacentHTML('beforeend', block);
+
+  };
+
+</script>
+>>>>>>> 324d1fdcaebf0c54d85ac4aa43011c1aaa0fb661
 </html>
