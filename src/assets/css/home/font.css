@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'Reaver';
+  src: url(../../fonts/Reaver-SemiBold.woff) format('woff');
+}
+
+.font-reaver-600{
+  font-family: 'Reaver';
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 3px;
+}
+
+.font-uppercase{
+  text-transform: uppercase;
+}
+
+
+.font-white{
+  color: #fff;
+}
+
+.font-gray-light{
+  color:#ffffff90
+}
+
+.font-gray-light2{
+  color: #999
+}
+
+.font-bg-black{
+  background-color: black;
+}

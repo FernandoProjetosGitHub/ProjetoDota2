@@ -1,96 +1,80 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dota2</title>
-  <link rel="shortcut icon" href="https://www.dota2.com/favicon.ico" type="assets/image/x-icon">
-  <link rel="stylesheet" href="../css/Nav.css">
-  <link rel="stylesheet" href="../css/Header.css">
-  <link rel="stylesheet" href="../css/Article.css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://www.dota2.com/favicon.ico" type="assets/image/x-icon">
+    <link rel="stylesheet" href="../css/home/disp.css">
+    <link rel="stylesheet" href="../css/home/font.css">
+    <link rel="stylesheet" href="../css/home/p.css">
+    <link rel="stylesheet" href="../css/home/reset.css">
+    <link rel="stylesheet" href="../css/home/hover.css">
+    <link rel="stylesheet" href="../css/home/op.css">
+    <link rel="stylesheet" href="../css/home/border.css">
+    <link rel="stylesheet" href="../css/home/component.css">
+    <title>Dota2</title>
+  </head>
 
-<body>
-  <div id="menu">
-    <div id="navTotal">
-      <nav class="menuItemLogo"><a href=""><img src="../images/dota2_logo_symbol.png" alt="" srcset=""></a></nav>
-      <nav class="menuItem"><a href="">Jogo</a></nav>
-      <nav class="menuItem"><a href="">Herois</a></nav>
-      <nav class="menuItem"><a href="">Novidades</a></nav>
-      <nav class="menuItem"><a href="">Esports</a></nav>
-    </div>
-    <div>
-      <h1>INICIAR SESSÃO</h1>
-      <h1>Escolha seu idioma</h1>
-    
-    <form action="/mudar-idioma" method="GET">
-        <label for="idiomas">Selecione o idioma:</label>
-        <select name="idiomas" id="idiomas">
-            <option value="pt-br">Português (Brasil)</option>
-            <option value="en">Inglês</option>
-            <option value="es">Espanhol</option>
-            <option value="fr">Francês</option>
-            <option value="de">Alemão</option>
+  <body class="font-bg-black">
+
+    <div class="disp-flex disp-just-flex-spacing-between disp-align-items-center p-30">
+      <div class="disp-flex disp-just-center">
+        <nav class="p-30 font-uppercase font-reaver-600 op-08 hover-op1" aria-label="Jogo"><a class="font-white" id="text-menu-game" href=""> </a></nav>
+        <nav class="font-reaver-600 p-30 font-uppercase op-08 hover-op1" aria-label="Herois"><a class="font-white" id="text-menu-heroes" href=""> </a></nav>
+        <nav class="font-reaver-600 p-30 font-uppercase op-08 hover-op1" aria-label="News"><a class="font-white" id="text-menu-news" href=""> </a></nav>
+        <nav class="font-reaver-600 p-30 font-uppercase op-08 hover-op1" aria-label="Esports"><a class="font-white" id="text-menu-sports" href=""> </a></nav>
+      </div>
+
+      <div class="disp-flex disp-flex-dir-col disp-align-items-center">
+        <label for="idiomas" class="font-gray-light" id="text-selectLanguage"></label>
+        <select class="component-select" name="idiomas" id="idiomas" onchange="changeLanguage(this.value)">
+          <option value="pt" class="font-gray-light2" selected>Português (Brasil)</option>
+          <option value="eng" class="font-gray-light2">Inglês</option>
+          <option value="fr" class="font-gray-light2">Francês</option>
+          <option value="zh" class="font-gray-light2">Chinês</option>
+          <option value="hi" class="font-gray-light2">Indú</option>
         </select>
-    </form>
-    </div>
-  </div>
 
-  <header>
-    <h1>"UMA OBRA- <br>
-      PRIMA <br> 
-      MODERNA <br> 
-      MULTIJOGADORA." <br>
-    </h1>
-    <p><strong class="destructoid">-DESTRUCTOID</strong></p>
-    <div class="downloadSteam">
-      <h2><a href="">JOGUE GRATUITAMENTE</a></h2>
-      <P>BAIXE NO STEAM</P>
-    </div>
-      <div class="ultimasNovidades">
-        <h3>ÚLTIMAS NOVIDADES</h3>
-        <P><a href="">VER TODAS</a></P>
+        <select name="sem" id="sem">
+          <option value="pt" class="font-gray-light2" selected>Sem (Brasil)</option>
+          <option value="eng" class="font-gray-light2">Inglês</option>
+          <option value="fr" class="font-gray-light2">Francês</option>
+          <option value="zh" class="font-gray-light2">Chinês</option>
+          <option value="hi" class="font-gray-light2">Indú</option>
+        </select>
       </div>
-  </header>
-  <article>
-    <h1>JUNTE-SE À <br>
-      BATALHA DOS <br> 
-      ANCESTRAIS
-    </h1>
-    <p>Todos os dias, milhões de jogadores ao redor do mundo entram na batalha como um dos mais de 100 heróis de Dota em uma batalha entre equipes de cinco jogadores.  Dota 2 é o jogo multijogador de ação e estratégia em tempo real mais profundo já feito, e há sempre uma nova estratégia ou tática a ser descoberta.  É completamente gratuito para jogar e assim sempre será — comece a defender o seu Ancestral já.</p>
-    <div class="confiraNovidades">
-      <p><a href="">CONFIRA AS NOVIDADES</a></p>
-    </div>
-  </article>
-  <section>
-    <h1>QUEM VOCÊ</h1>
-    <h1>ESCOLHERÁ</h1>
-    <P>De engenhosos magos a brutamontes destemidos, passando por rebeldes astutos, a gama de heróis do Dota 2 é enorme e incrivelmente diversa. Lance habilidades incríveis e Ultimates devastadoras no seu caminho para a vitória.</P>
-    <p class="verHerois" ><a href="">VER TODOS OS HERÓIS</a></p>
-  </section>
-  <section>
-    <h1>O CIRCUITO</h1>
-    <h1>PROFISSIONAL <br> DE DOTA</h1>
-    <p>Quando não estiver subindo nas classificações, você pode aprender com os melhores: o Circuito Profissional de Dota apresenta uma competição do mais alto nível de Dota 2, com transmissão regular pelo cliente do jogo, na Twitch e Steam.TV. Tudo isso culmina no maior campeonato de eSports do mundo, o International — um evento profissional de Dota 2 que você não pode deixar de acompanhar.</p>
-  </section>
 
-  <div>
-    <h1>JUNTE-SE À</h1>
-    <h1>BATALHA</h1>
-    <p class="jogueGratisAgora"><a href="">JOGUE GRATUITAMENTE AGORA</a></p>
-  </div>
-  <footer>
-    <div class="footer">
-      <div class="footerLogoValve">
-        <img src="" alt="" srcset="">
-      </div>
-      <div class="footerLogoDota" >
-        <img src="" alt="" srcset="">
-      </div>
-      <p>Dota e o logotipo do Dota são marcas e/ou marcas registradas da Valve Corporation. 2024 Valve Corporation, todos os direitos reservados.</p>
     </div>
-  </footer>
 
-</body>
+  </body>
+
+  <script type="module">
+    import { Heroes } from '../js/script.js';
+    var heroesObj = new Heroes();
+    const allText = heroesObj.allText();
+    
+    window.onload = function () {
+      window.fullText = allText;
+      //default: pt
+      changeLanguage("pt");
+    };
+
+  </script>
+
+  <script>
+    function changeLanguage(selectedLanguage){
+
+      var actualLanguage = fullText.filter( (elem) => elem.lang == selectedLanguage )[0];
+      Object.keys(actualLanguage).forEach(prop => {
+          var elem = document.getElementById(prop);
+          if (elem){
+            elem.innerHTML = actualLanguage[prop];
+          }
+          console.log(prop)
+      });
+
+    }
+  </script>
+
 </html>
