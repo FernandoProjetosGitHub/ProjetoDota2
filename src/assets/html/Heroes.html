@@ -14,15 +14,17 @@
   <div id="container">
     <div id="menu">
       <div id="navMenu">
-         <!-- Logo Dota 2 deve ser background-image -->
-        <nav class="menuItemLogo"><a href=""><p>Dota 2</p></a></nav>
+        <!-- Logo Dota 2 deve ser background-image -->
+        <nav class="menuItemLogo"><a href="">
+            <p>Dota 2</p>
+          </a></nav>
         <nav class="menuItem"><a href="">Jogo</a></nav>
         <nav class="menuItem"><a href="">Herois</a></nav>
         <nav class="menuItem"><a href="">Novidades</a></nav>
         <nav class="menuItem"><a href="">Esports</a></nav>
       </div>
     </div>
-    
+
     <div id="navID">
       <p>Iniciar Sessão</p>
       <label for="idiomas">Selecionar o idioma <br></label>
@@ -31,12 +33,13 @@
       <p><a href="">Jogue Gratuitamente</a></p>
     </div>
   </div>
+  </div>
   <header id="header">
     <h1>Escolha o seu herói</h1>
     <P>De engenhosos magos a brutamontes destemidos, passando por rebeldes astutos, a gama de heróis do Dota 2 é
       enorme e incrivelmente diversa. Lance habilidades incríveis e Ultimates devastadoras no seu caminho para a
       vitória.</P>
-    
+
   </header>
   <section>
     <div id="filter">
@@ -54,21 +57,22 @@
     </div>
   </section>
 
-  
-    
+
+
   <div id="heroesDiv"></div>
   <footer>
     <div class="footer">
       <div class="footerLogoValve">
-        <img src="" alt="" srcset="">
+        <img src="../images/valve_logo.png" alt="Valve Logo" srcset="">
       </div>
 
       <div class="footerLogoDota">
-        <img src="" alt="" srcset="">
+        <img src="../images/dota_footer_logo.png" alt="Dota2 Logo" srcset="">
       </div>
-      <p>Dota e o logotipo do Dota são marcas e/ou marcas registradas da Valve Corporation. 2024 Valve
-        Corporation, todos os direitos reservados.</p>
+
     </div>
+    <p>Dota e o logotipo do Dota são marcas e/ou marcas registradas da Valve Corporation. <br> 2024 Valve
+      Corporation, todos os direitos reservados.</p>
   </footer>
 
 </body>
@@ -83,8 +87,8 @@
     for (var indice = 0; indice < allHeroes.length; indice++) {
       let heroiAtual = allHeroes[indice];
       block = block + `
-        <div>
-          <p>${heroiAtual.nome}</p>
+        <div id="heroesBlock">
+          
           <img src="${heroiAtual.img}" alt="hero"/>
         </div>
       `
