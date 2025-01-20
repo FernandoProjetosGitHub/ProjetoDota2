@@ -22,7 +22,7 @@ Estruturação: HTML
 Estilização: CSS
 Integrações: JS com APIs
 
-## Padrnização de issues
+## Padronização de issues
 Toda issue deverá conter no inicio do seu enunciado, um ou mais tipos a que ela se refere, ex:
 [js] - Refere-se a edições no Javascript
 [html] - Refere-se a edições no HTML
