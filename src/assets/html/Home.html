@@ -28,26 +28,118 @@
 
       <div class="disp-flex disp-flex-dir-col disp-align-items-center">
         <label for="idiomas" class="font-gray-light" id="text-selectLanguage"></label>
-        <select class="component-select" name="idiomas" id="idiomas" onchange="changeLanguage(this.value)">
-          <option value="pt" class="font-gray-light2" selected>Português (Brasil)</option>
-          <option value="eng" class="font-gray-light2">Inglês</option>
-          <option value="fr" class="font-gray-light2">Francês</option>
-          <option value="zh" class="font-gray-light2">Chinês</option>
-          <option value="hi" class="font-gray-light2">Indú</option>
-        </select>
+        
+        <div class="component-parent-select">
+          <select name="idiomas" id="idiomas" onchange="changeLanguage(this.value)">
+            <option value="pt" >Português (Brasil)</option>
+            <option value="pt" >Português (Brasil)</option>
+            <option value="eng" >Inglês</option>
+            <option value="fr">Francês</option>
+            <option value="zh" >Chinês</option>
+            <option value="hi" >Indú</option>
+          </select>
+        </div>
 
-        <select name="sem" id="sem">
-          <option value="pt" class="font-gray-light2" selected>Sem (Brasil)</option>
-          <option value="eng" class="font-gray-light2">Inglês</option>
-          <option value="fr" class="font-gray-light2">Francês</option>
-          <option value="zh" class="font-gray-light2">Chinês</option>
-          <option value="hi" class="font-gray-light2">Indú</option>
-        </select>
       </div>
 
     </div>
 
   </body>
+
+  <!-- para manipular o select -->
+  <script>
+
+    //captar a DIV pai do select:
+    const parentSelect = document.getElementsByClassName("component-parent-select")[0];
+    //Captar o select dentro da DIV pai. Esse select será "hide-ado" e uma nova contrução de DIVS ocorrerá no lugar 
+    const select = parentSelect.getElementsByTagName("select")[0];
+    // Tenho que saber o numero de opcoes para saber o numero de DIVs que preciso criar
+    const numberOfOptions = select.length;
+
+    //criando a primeira DIV: a selecionada
+    var newDivSelected = document.createElement("DIV");
+    //coloco a classe na DIV
+    newDivSelected.setAttribute("class", "component-custom-select-selected");
+    //todas as propriedades do select do item selecionado DEVEM ser iguais às propriedades da nova DIV:
+    var indexSelected = select.selectedIndex;
+    newDivSelected.innerHTML = select.options[indexSelected].innerHTML;
+    //Adiciono essa DIV, colocanso-a abaixo do "parent" do select:
+    parentSelect.appendChild(newDivSelected);
+
+    //Crio uma DIV pai para que todas as opcoes não selecionadas fiquem nela:
+    var newDivToHoldAllOptions = document.createElement("DIV");
+    newDivToHoldAllOptions.setAttribute("class", "select-items select-hide");
+
+    //Criando uma DIV para cada um a das outras opções não selecionados:
+    for (var index=1; index < numberOfOptions; index++){
+      var newDivNotSelected = document.createElement("DIV");
+      //Copio o innerHtml do select e coloco nessa DIV, uma vez que o select terá apenas display none:
+      newDivNotSelected.innerHTML = select.options[index].innerHTML;
+
+      //Adiciono o evento de clique na option
+      newDivNotSelected.addEventListener("click", function(e) {
+
+        var selectFromThisElement = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        var numberOfOptionsFromThisElement = selectFromThisElement.length;
+        
+        var prevousSelectedDiv = this.parentNode.previousSibling;
+
+        for (var indice = 0; indice < numberOfOptionsFromThisElement; indice++) {
+          if (selectFromThisElement.options[indice].innerHTML == this.innerHTML) {
+            selectFromThisElement.selectedIndex = indice;
+            prevousSelectedDiv.innerHTML = this.innerHTML;
+            divThatHoldAllNonSelectedOptionsFromClassName = this.parentNode.getElementsByClassName("same-as-selected");
+            numberOfOptionsNonSelected = divThatHoldAllNonSelectedOptionsFromClassName.length;
+            for (var indexOfNonSelectedOptions = 0; indexOfNonSelectedOptions < numberOfOptionsNonSelected; k++) {
+              divThatHoldAllNonSelectedOptionsFromClassName[indexOfNonSelectedOptions].removeAttribute("class");
+            }
+            this.setAttribute("class", "same-as-selected");
+            break;
+          }
+        }
+        prevousSelectedDiv.click();
+      });
+      newDivToHoldAllOptions.appendChild(newDivNotSelected);
+    }
+    parentSelect.appendChild(newDivToHoldAllOptions);
+
+    newDivSelected.addEventListener("click", function(e) {
+      //Para a propagação de recorrencias
+      e.stopPropagation();
+      //Fecha todos os selects anteriorment abertos
+      closeAllSelect(this);
+      //Faz a função: "apaga" ou "exibe" a classe. Se a classe existir, da HIDE, se não existir, insere
+      this.nextSibling.classList.toggle("select-hide");
+      this.classList.toggle("select-arrow-active");
+    });
+    
+    function closeAllSelect(elmnt) {
+      /*a function that will close all select boxes in the document,
+      except the current select box:*/
+      var x, y, i, xl, yl, arrNo = [];
+      x = document.getElementsByClassName("select-items");
+      y = document.getElementsByClassName("component-custom-select-selected");
+      xl = x.length;
+      yl = y.length;
+      for (i = 0; i < yl; i++) {
+        if (elmnt == y[i]) {
+          arrNo.push(i)
+        } else {
+          y[i].classList.remove("select-arrow-active");
+        }
+      }
+      for (i = 0; i < xl; i++) {
+        if (arrNo.indexOf(i)) {
+          x[i].classList.add("select-hide");
+          console.log('wl: ', x[i]);
+        }
+      }
+    }
+
+    /*if the user clicks anywhere outside the select box,
+    then close all select boxes:*/
+    document.addEventListener("click", closeAllSelect);
+  </script>
 
   <script type="module">
     import { Heroes } from '../js/script.js';
@@ -71,8 +163,7 @@
           if (elem){
             elem.innerHTML = actualLanguage[prop];
           }
-          console.log(prop)
-      });
+      });     
 
     }
   </script>

@@ -1,37 +1,53 @@
-.component-select{
-  min-width: 100px;
+@font-face {
+  font-family: 'Radiance';
+  src: url(../../fonts/radiance.woff) format('woff');
 }
 
-.component-select select{
-  appearance: none;
-  width: 100%;
-  font-size: 1.15rem;
-  padding: 0.675em 6em 0.675em 1em;
-  border: 1px solid red;
-  border-radius: 0.25rem;
-  cursor: pointer;
+.component-parent-select {
   position: relative;
+  font-family: Arial;
 }
 
-.component-select::before,
-.component-select::after {
-  --size: 0.3rem;
+/* apagar o select original para criar um grupo de divs que vao atuar como o select */
+.component-parent-select select {
+  display: none;
+}
+
+.component-custom-select-selected{
+  background-color: #222222;
+  cursor: pointer;
+  color: #cccbcb;
+  border: 1px solid transparent;
+  padding: 5px;
+  min-width: 90px;
+  display: flex;
+  justify-content: center;
+}
+
+.select-items div,.component-custom-select {
+  color: #999; /* List of non select items font color */
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
   position: absolute;
-  content: "";
-  right: 1rem;
-  pointer-events: none;
+  background-color: #222222; /*background certin */ 
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
 }
 
-.component-select::before {
-  border-left: var(--size) solid transparent;
-  border-right: var(--size) solid transparent;
-  border-bottom: var(--size) solid black;
-  top: 40%;
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
 }
 
-.component-select::after {
-  border-left: var(--size) solid transparent;
-  border-right: var(--size) solid transparent;
-  border-top: var(--size) solid black;
-  top: 55%;
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
 }
