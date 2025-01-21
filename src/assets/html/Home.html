@@ -13,24 +13,25 @@
     <link rel="stylesheet" href="../css/home/op.css">
     <link rel="stylesheet" href="../css/home/border.css">
     <link rel="stylesheet" href="../css/home/component.css">
+    <link rel="stylesheet" href="../css/home/width.css">
     <title>Dota2</title>
   </head>
 
   <body class="font-bg-black">
 
     <div class="disp-flex disp-just-flex-spacing-between disp-align-items-center p-30">
+
       <div class="disp-flex disp-just-center">
-        <nav class="p-30 font-uppercase font-reaver-600 op-08 hover-op1" aria-label="Jogo"><a class="font-white" id="text-menu-game" href=""> </a></nav>
-        <nav class="font-reaver-600 p-30 font-uppercase op-08 hover-op1" aria-label="Herois"><a class="font-white" id="text-menu-heroes" href=""> </a></nav>
-        <nav class="font-reaver-600 p-30 font-uppercase op-08 hover-op1" aria-label="News"><a class="font-white" id="text-menu-news" href=""> </a></nav>
-        <nav class="font-reaver-600 p-30 font-uppercase op-08 hover-op1" aria-label="Esports"><a class="font-white" id="text-menu-sports" href=""> </a></nav>
+        <nav class="font-size-18 p-30 font-uppercase font-reaver-600 op-08 hover-op1" aria-label="Jogo"><a class="font-white" id="text-menu-game" href=""> </a></nav>
+        <nav class="font-size-18 font-reaver-600 p-30 font-uppercase op-08 hover-op1" aria-label="Herois"><a class="font-white" id="text-menu-heroes" href=""> </a></nav>
+        <nav class="font-size-18 font-reaver-600 p-30 font-uppercase op-08 hover-op1" aria-label="News"><a class="font-white" id="text-menu-news" href=""> </a></nav>
+        <nav class="font-size-18 font-reaver-600 p-30 font-uppercase op-08 hover-op1" aria-label="Esports"><a class="font-white" id="text-menu-sports" href=""> </a></nav>
       </div>
 
       <div class="disp-flex disp-flex-dir-col disp-align-items-center">
         <label for="idiomas" class="font-gray-light" id="text-selectLanguage"></label>
-        
         <div class="component-parent-select">
-          <select name="idiomas" id="idiomas" onchange="changeLanguage(this.value)">
+          <select name="idiomas" id="idiomas">
             <option value="pt" >Português (Brasil)</option>
             <option value="pt" >Português (Brasil)</option>
             <option value="eng" >Inglês</option>
@@ -39,12 +40,56 @@
             <option value="hi" >Indú</option>
           </select>
         </div>
-
       </div>
 
     </div>
 
+    <div>
+    <video autoplay="" preload="auto" loop="" playsinline="" class="main-video">
+      <!-- <source type="video/webm" src="https://cdn.akamai.steamstatic.com/apps/dota2/videos/dota_react/homepage/dota_montage_webm.webm">
+      <source type="video/mp4" src="https://cdn.akamai.steamstatic.com/apps/dota2/videos/dota_react/homepage/dota_montage_02.mp4"> -->
+    </video>
+    <div class="gradient-video-footer"></div>
+
+    <div id="carrossell">
+    </div>
+
+    </div>
   </body>
+
+  <!-- CARROSSELL -->
+  <script>
+    const itemsFromCarrossell = [];
+    itemsFromCarrossell.push({
+      "lang": "pt",
+      "text": "\"Dota não é só um jogo, é muito mais que um jogo.\""
+      ,
+      "author": "- É o Pitch Mané"
+
+    });
+
+    
+    itemsFromCarrossell.push(["\"Dota não é só um jogo, é muito mais que um jogo.\"", "- É o Pitch Mané"]);
+    itemsFromCarrossell.push(["D, O, T, A, eu disse DOTA!", "É o Pitch Mané"]);
+    itemsFromCarrossell.push(["Piriri pororó 123", "Indiano, Jalym rabey"]);
+
+    const sldierElem = document.getElementById("carrossell");
+    for(var indice=0;indice<itemsFromCarrossell.length; indice++){
+      var parentDiv = document.createElement("div");
+      var titleDiv = document.createElement("div");
+      titleDiv.setAttribute("class", "font-white font-size-60 font-uppercase font-reaver-600 width-max-40 p-30");
+      titleDiv.innerHTML = itemsFromCarrossell[indice][0];
+      var whoDiv = document.createElement("div");
+      whoDiv.setAttribute("class", "font-white font-reaver-600 font-uppercase font-gray-light p-left-30");
+      whoDiv.innerHTML = itemsFromCarrossell[indice][1];
+
+      parentDiv.appendChild(titleDiv);
+      parentDiv.appendChild(whoDiv);
+      sldierElem.appendChild(parentDiv);
+break;
+    }
+
+  </script>
 
   <!-- para manipular o select -->
   <script>
@@ -63,6 +108,9 @@
     //todas as propriedades do select do item selecionado DEVEM ser iguais às propriedades da nova DIV:
     var indexSelected = select.selectedIndex;
     newDivSelected.innerHTML = select.options[indexSelected].innerHTML;
+    //adiciono a linguagem do primeiro select:
+    newDivSelected.setAttribute("value", "pt");
+
     //Adiciono essa DIV, colocanso-a abaixo do "parent" do select:
     parentSelect.appendChild(newDivSelected);
 
@@ -90,7 +138,7 @@
             prevousSelectedDiv.innerHTML = this.innerHTML;
             divThatHoldAllNonSelectedOptionsFromClassName = this.parentNode.getElementsByClassName("same-as-selected");
             numberOfOptionsNonSelected = divThatHoldAllNonSelectedOptionsFromClassName.length;
-            for (var indexOfNonSelectedOptions = 0; indexOfNonSelectedOptions < numberOfOptionsNonSelected; k++) {
+            for (var indexOfNonSelectedOptions = 0; indexOfNonSelectedOptions < numberOfOptionsNonSelected; indexOfNonSelectedOptions++) {
               divThatHoldAllNonSelectedOptionsFromClassName[indexOfNonSelectedOptions].removeAttribute("class");
             }
             this.setAttribute("class", "same-as-selected");
@@ -106,34 +154,45 @@
     newDivSelected.addEventListener("click", function(e) {
       //Para a propagação de recorrencias
       e.stopPropagation();
+
       //Fecha todos os selects anteriorment abertos
-      closeAllSelect(this);
+      closeAllSelect(this, e.clientY);
       //Faz a função: "apaga" ou "exibe" a classe. Se a classe existir, da HIDE, se não existir, insere
       this.nextSibling.classList.toggle("select-hide");
       this.classList.toggle("select-arrow-active");
+      
     });
     
-    function closeAllSelect(elmnt) {
-      /*a function that will close all select boxes in the document,
-      except the current select box:*/
+    function closeAllSelect(elmnt, y) {
+      if (!(elmnt instanceof HTMLDivElement) || y != 0){return;}
+
+
+      var allOptionsFromSelect = document.getElementById('idiomas');
+      var selectedOption = document.getElementsByClassName("select-items")[0].getElementsByClassName("same-as-selected")[0];
+      var valueOptionsFromSelect = [];
+
+      if (!selectedOption){return;}
+      for (var i=0; i< allOptionsFromSelect.length; i++){
+        valueOptionsFromSelect.push(
+          [allOptionsFromSelect[i].innerHTML, allOptionsFromSelect[i].value]
+        );
+      }
+      var selectedIndex = valueOptionsFromSelect.findIndex(e => e[0] == selectedOption.innerHTML);
+      var nextLanguageToChange = valueOptionsFromSelect[selectedIndex];
+
       var x, y, i, xl, yl, arrNo = [];
       x = document.getElementsByClassName("select-items");
       y = document.getElementsByClassName("component-custom-select-selected");
       xl = x.length;
       yl = y.length;
-      for (i = 0; i < yl; i++) {
-        if (elmnt == y[i]) {
-          arrNo.push(i)
-        } else {
-          y[i].classList.remove("select-arrow-active");
-        }
-      }
-      for (i = 0; i < xl; i++) {
-        if (arrNo.indexOf(i)) {
-          x[i].classList.add("select-hide");
-          console.log('wl: ', x[i]);
-        }
-      }
+      if (elmnt == y[0]) { arrNo.push(0) }
+
+      if (arrNo.indexOf(0)) { x[0].classList.add("select-hide"); }
+
+      changeLanguage(
+        nextLanguageToChange[1]
+      );
+
     }
 
     /*if the user clicks anywhere outside the select box,

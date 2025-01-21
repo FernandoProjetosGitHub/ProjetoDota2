@@ -20,6 +20,10 @@
   justify-content: space-between;
 }
 
+.disp-just-flex-spacing-evenly{
+  justify-content: space-evenly
+}
+
 .disp-align-items-center{
   align-items: center;
 }

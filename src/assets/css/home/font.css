@@ -6,9 +6,16 @@
 .font-reaver-600{
   font-family: 'Reaver';
   font-weight: 600;
-  font-size: 18px;
   letter-spacing: 3px;
 }
+
+.font-size-18{
+  font-size: 18px;
+}	
+
+.font-size-60{
+  font-size: 60px;
+}	
 
 .font-uppercase{
   text-transform: uppercase;
