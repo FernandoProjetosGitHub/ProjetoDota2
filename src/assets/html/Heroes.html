@@ -89,9 +89,11 @@
       block = block + `
         <div id="heroesBlock">
           
-          <img src="${heroiAtual.img}" alt="hero"/>
+          <div class="heroesImg"><img src="${heroiAtual.img}" alt="hero"/></div>
+          <div class="heroesName">${heroiAtual.name}</div>
+          
         </div>
-      `
+      `;
     }
     let heroesDiv = document.getElementById("heroesDiv");
     heroesDiv.insertAdjacentHTML('beforeend', block);
