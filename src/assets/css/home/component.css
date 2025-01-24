@@ -52,21 +52,31 @@
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.main-video{
-  padding: 0px;
-  margin:0pc;
-  width: fit-content;
-  max-width: 100%;
+.main-video {
   position: absolute;
-  top:0px;
-  left:0px;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 700px;
   z-index: -1;
+  overflow: hidden;
+}
+
+.main-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .gradient-video-footer{
   width: 100%;
-  height: 200px;
-  position: absolute;
-  top: 625px;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.7) 80%, black 100%);
+  height: 100px;
+  top:600px;
+  position: absolute;
 }
+
+
+

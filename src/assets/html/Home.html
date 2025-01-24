@@ -1,230 +1,313 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://www.dota2.com/favicon.ico" type="assets/image/x-icon">
-    <link rel="stylesheet" href="../css/home/disp.css">
-    <link rel="stylesheet" href="../css/home/font.css">
-    <link rel="stylesheet" href="../css/home/p.css">
-    <link rel="stylesheet" href="../css/home/reset.css">
-    <link rel="stylesheet" href="../css/home/hover.css">
-    <link rel="stylesheet" href="../css/home/op.css">
-    <link rel="stylesheet" href="../css/home/border.css">
-    <link rel="stylesheet" href="../css/home/component.css">
-    <link rel="stylesheet" href="../css/home/width.css">
-    <title>Dota2</title>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="https://www.dota2.com/favicon.ico" type="assets/image/x-icon">
+  <link rel="stylesheet" href="../css/home/disp.css">
+  <link rel="stylesheet" href="../css/home/font.css">
+  <link rel="stylesheet" href="../css/home/p.css">
+  <link rel="stylesheet" href="../css/home/reset.css">
+  <link rel="stylesheet" href="../css/home/hover.css">
+  <link rel="stylesheet" href="../css/home/op.css">
+  <link rel="stylesheet" href="../css/home/border.css">
+  <link rel="stylesheet" href="../css/home/component.css">
+  <link rel="stylesheet" href="../css/home/width.css">
+  <title>Dota2</title>
+</head>
 
-  <body class="font-bg-black">
+<body class="font-bg-black">
 
-    <div class="disp-flex disp-just-flex-spacing-between disp-align-items-center p-30">
+  <div class="disp-flex disp-just-flex-spacing-between disp-align-items-center p-30">
 
-      <div class="disp-flex disp-just-center">
-        <nav class="font-size-18 p-30 font-uppercase font-reaver-600 op-08 hover-op1" aria-label="Jogo"><a class="font-white" id="text-menu-game" href=""> </a></nav>
-        <nav class="font-size-18 font-reaver-600 p-30 font-uppercase op-08 hover-op1" aria-label="Herois"><a class="font-white" id="text-menu-heroes" href=""> </a></nav>
-        <nav class="font-size-18 font-reaver-600 p-30 font-uppercase op-08 hover-op1" aria-label="News"><a class="font-white" id="text-menu-news" href=""> </a></nav>
-        <nav class="font-size-18 font-reaver-600 p-30 font-uppercase op-08 hover-op1" aria-label="Esports"><a class="font-white" id="text-menu-sports" href=""> </a></nav>
-      </div>
-
-      <div class="disp-flex disp-flex-dir-col disp-align-items-center">
-        <label for="idiomas" class="font-gray-light" id="text-selectLanguage"></label>
-        <div class="component-parent-select">
-          <select name="idiomas" id="idiomas">
-            <option value="pt" >Português (Brasil)</option>
-            <option value="pt" >Português (Brasil)</option>
-            <option value="eng" >Inglês</option>
-            <option value="fr">Francês</option>
-            <option value="zh" >Chinês</option>
-            <option value="hi" >Indú</option>
-          </select>
-        </div>
-      </div>
-
+    <div class="disp-flex disp-just-center">
+      <nav class="font-size-18 p-30 font-uppercase font-reaver-600 op-08 hover-op1" aria-label="Jogo"><a
+          class="font-white" id="text-menu-game" href=""> </a></nav>
+      <nav class="font-size-18 font-reaver-600 p-30 font-uppercase op-08 hover-op1" aria-label="Herois"><a
+          class="font-white" id="text-menu-heroes" href="Heroes.html"> </a></nav>
+      <nav class="font-size-18 font-reaver-600 p-30 font-uppercase op-08 hover-op1" aria-label="News"><a
+          class="font-white" id="text-menu-news" href=""> </a></nav>
+      <nav class="font-size-18 font-reaver-600 p-30 font-uppercase op-08 hover-op1" aria-label="Esports"><a
+          class="font-white" id="text-menu-sports" href=""> </a></nav>
     </div>
 
-    <div>
-    <video autoplay="" preload="auto" loop="" playsinline="" class="main-video">
-      <!-- <source type="video/webm" src="https://cdn.akamai.steamstatic.com/apps/dota2/videos/dota_react/homepage/dota_montage_webm.webm">
-      <source type="video/mp4" src="https://cdn.akamai.steamstatic.com/apps/dota2/videos/dota_react/homepage/dota_montage_02.mp4"> -->
+    <div class="disp-flex disp-flex-dir-col disp-align-items-center">
+      <label for="idiomas" class="font-gray-light" id="text-selectLanguage"></label>
+      <div class="component-parent-select">
+        <select name="idiomas" id="idiomas">
+          <option value="pt">Português (Brasil)</option>
+          <option value="pt">Português (Brasil)</option>
+          <option value="eng">Inglês</option>
+          <option value="fr">Francês</option>
+          <option value="zh">Chinês</option>
+          <option value="hi">Indú</option>
+        </select>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="main-video">
+    <video autoplay="" preload="auto" loop="" playsinline="" >
+      <source type="video/webm" src="https://cdn.akamai.steamstatic.com/apps/dota2/videos/dota_react/homepage/dota_montage_webm.webm">
+      <source type="video/mp4" src="https://cdn.akamai.steamstatic.com/apps/dota2/videos/dota_react/homepage/dota_montage_02.mp4">
     </video>
-    <div class="gradient-video-footer"></div>
+  </div>
+  <div class="gradient-video-footer"></div>
 
-    <div id="carrossell">
-    </div>
+  <div id="carrossell">
+  </div>
 
-    </div>
-  </body>
+</body>
 
-  <!-- CARROSSELL -->
-  <script>
+<!-- CARROSSELL -->
+<script>
+  function showCarrosselInthatLanguage(language){
     const itemsFromCarrossell = [];
-    itemsFromCarrossell.push({
-      "lang": "pt",
-      "text": "\"Dota não é só um jogo, é muito mais que um jogo.\""
-      ,
-      "author": "- É o Pitch Mané"
-
+    itemsFromCarrossell.push(
+      {
+        "author": "- É o Pitch Mané",
+        "pt": "\"Dota não é só um jogo, é muito mais que um jogo.\"",
+        "eng": "\"Dota is not just a game, it's much more than a game.\"",
+        "fr": "\"Dota n'est pas juste un jeu, c'est bien plus qu'un jeu.\"",
+        "zh": "\"Dota不仅仅是一款游戏，它远不止是一款游戏。\"",
+        "hi": "\"डोटा सिर्फ एक खेल नहीं है, यह एक खेल से कहीं अधिक है।\"",
     });
 
-    
-    itemsFromCarrossell.push(["\"Dota não é só um jogo, é muito mais que um jogo.\"", "- É o Pitch Mané"]);
-    itemsFromCarrossell.push(["D, O, T, A, eu disse DOTA!", "É o Pitch Mané"]);
-    itemsFromCarrossell.push(["Piriri pororó 123", "Indiano, Jalym rabey"]);
+    itemsFromCarrossell.push(
+      {
+        "author": "- É o Pitch Mané",
+        "pt": "\"D, O, T, A, eu disse DOTA!\"",
+        "eng": "\"D, O, T, A, I said DOTA!\"",
+        "fr": "\"D, O, T, A, j'ai dit DOTA!\"",
+        "zh": "\"D, O, T, A, 我说DOTA!\"",
+        "hi": "\"डी, ओ, टी, ए, मैंने कहा डोटा!\"",
+    });
+  
+    itemsFromCarrossell.push(
+      {
+        "author": "- Noob 3k",
+        "pt": "\"GG ez.\"",
+        "eng": "\"GG ez.\"",
+        "fr": "\"GG ez.\"",
+        "zh": "\"GG ez.\"",
+        "hi": "\"GG ez.\"",
+    });
 
-    const sldierElem = document.getElementById("carrossell");
-    for(var indice=0;indice<itemsFromCarrossell.length; indice++){
-      var parentDiv = document.createElement("div");
-      var titleDiv = document.createElement("div");
-      titleDiv.setAttribute("class", "font-white font-size-60 font-uppercase font-reaver-600 width-max-40 p-30");
-      titleDiv.innerHTML = itemsFromCarrossell[indice][0];
-      var whoDiv = document.createElement("div");
-      whoDiv.setAttribute("class", "font-white font-reaver-600 font-uppercase font-gray-light p-left-30");
-      whoDiv.innerHTML = itemsFromCarrossell[indice][1];
-
-      parentDiv.appendChild(titleDiv);
-      parentDiv.appendChild(whoDiv);
-      sldierElem.appendChild(parentDiv);
-break;
+    const sliderElement = document.getElementById("carrossell");
+    while (sliderElement.firstChild) {
+      sliderElement.removeChild(sliderElement.firstChild);
     }
 
-  </script>
+    const randomIndice = Math.floor(Math.random() * itemsFromCarrossell.length);
 
-  <!-- para manipular o select -->
-  <script>
+    var parentDiv = document.createElement("div");
+    var titleDiv = document.createElement("div");
+    titleDiv.setAttribute("class", "font-white font-size-60 font-uppercase font-reaver-600 width-max-50 p-30");
+    titleDiv.innerHTML = itemsFromCarrossell[randomIndice][language];
+    var whoDiv = document.createElement("div");
+    whoDiv.setAttribute("class", "font-white font-reaver-600 font-uppercase font-gray-light p-left-30");
+    whoDiv.innerHTML = itemsFromCarrossell[randomIndice]['author'];
 
-    //captar a DIV pai do select:
-    const parentSelect = document.getElementsByClassName("component-parent-select")[0];
-    //Captar o select dentro da DIV pai. Esse select será "hide-ado" e uma nova contrução de DIVS ocorrerá no lugar 
-    const select = parentSelect.getElementsByTagName("select")[0];
-    // Tenho que saber o numero de opcoes para saber o numero de DIVs que preciso criar
-    const numberOfOptions = select.length;
+    parentDiv.appendChild(titleDiv);
+    parentDiv.appendChild(whoDiv);
+    sliderElement.appendChild(parentDiv);
+  }
 
-    //criando a primeira DIV: a selecionada
-    var newDivSelected = document.createElement("DIV");
-    //coloco a classe na DIV
-    newDivSelected.setAttribute("class", "component-custom-select-selected");
-    //todas as propriedades do select do item selecionado DEVEM ser iguais às propriedades da nova DIV:
-    var indexSelected = select.selectedIndex;
-    newDivSelected.innerHTML = select.options[indexSelected].innerHTML;
-    //adiciono a linguagem do primeiro select:
-    newDivSelected.setAttribute("value", "pt");
+  setInterval(function() {
+    const selectedLanguage = document.getElementById('idiomas').value;
+    const sliderElement = document.getElementById("carrossell");
 
-    //Adiciono essa DIV, colocanso-a abaixo do "parent" do select:
-    parentSelect.appendChild(newDivSelected);
+    // fade out
+    sliderElement.style.transition = "opacity 0.5s";
+    sliderElement.style.opacity = 0;
 
-    //Crio uma DIV pai para que todas as opcoes não selecionadas fiquem nela:
-    var newDivToHoldAllOptions = document.createElement("DIV");
-    newDivToHoldAllOptions.setAttribute("class", "select-items select-hide");
+    setTimeout(function() {
+      showCarrosselInthatLanguage(selectedLanguage);
 
-    //Criando uma DIV para cada um a das outras opções não selecionados:
-    for (var index=1; index < numberOfOptions; index++){
-      var newDivNotSelected = document.createElement("DIV");
-      //Copio o innerHtml do select e coloco nessa DIV, uma vez que o select terá apenas display none:
-      newDivNotSelected.innerHTML = select.options[index].innerHTML;
+      // fade in
+      sliderElement.style.transition = "opacity 0.5s";
+      sliderElement.style.opacity = 1;
+    }, 1000);
+  }, 4000);
+</script>
 
-      //Adiciono o evento de clique na option
-      newDivNotSelected.addEventListener("click", function(e) {
+<!-- para manipular o select -->
+<script>
 
-        var selectFromThisElement = this.parentNode.parentNode.getElementsByTagName("select")[0];
-        var numberOfOptionsFromThisElement = selectFromThisElement.length;
-        
-        var prevousSelectedDiv = this.parentNode.previousSibling;
+  //captar a DIV pai do select:
+  const parentSelect = document.getElementsByClassName("component-parent-select")[0];
+  //Captar o select dentro da DIV pai. Esse select será "hide-ado" e uma nova contrução de DIVS ocorrerá no lugar 
+  const select = parentSelect.getElementsByTagName("select")[0];
+  // Tenho que saber o numero de opcoes para saber o numero de DIVs que preciso criar
+  const numberOfOptions = select.length;
 
-        for (var indice = 0; indice < numberOfOptionsFromThisElement; indice++) {
-          if (selectFromThisElement.options[indice].innerHTML == this.innerHTML) {
-            selectFromThisElement.selectedIndex = indice;
-            prevousSelectedDiv.innerHTML = this.innerHTML;
-            divThatHoldAllNonSelectedOptionsFromClassName = this.parentNode.getElementsByClassName("same-as-selected");
-            numberOfOptionsNonSelected = divThatHoldAllNonSelectedOptionsFromClassName.length;
-            for (var indexOfNonSelectedOptions = 0; indexOfNonSelectedOptions < numberOfOptionsNonSelected; indexOfNonSelectedOptions++) {
-              divThatHoldAllNonSelectedOptionsFromClassName[indexOfNonSelectedOptions].removeAttribute("class");
-            }
-            this.setAttribute("class", "same-as-selected");
-            break;
+  //criando a primeira DIV: a selecionada
+  var newDivSelected = document.createElement("DIV");
+  //coloco a classe na DIV
+  newDivSelected.setAttribute("class", "component-custom-select-selected");
+  //todas as propriedades do select do item selecionado DEVEM ser iguais às propriedades da nova DIV:
+  var indexSelected = select.selectedIndex;
+  newDivSelected.innerHTML = select.options[indexSelected].innerHTML;
+  //adiciono a linguagem do primeiro select:
+  newDivSelected.setAttribute("value", "pt");
+
+  //Adiciono essa DIV, colocanso-a abaixo do "parent" do select:
+  parentSelect.appendChild(newDivSelected);
+
+  //Crio uma DIV pai para que todas as opcoes não selecionadas fiquem nela:
+  var newDivToHoldAllOptions = document.createElement("DIV");
+  newDivToHoldAllOptions.setAttribute("class", "select-items select-hide");
+
+  //Criando uma DIV para cada um a das outras opções não selecionados:
+  for (var index = 1; index < numberOfOptions; index++) {
+    var newDivNotSelected = document.createElement("DIV");
+    //Copio o innerHtml do select e coloco nessa DIV, uma vez que o select terá apenas display none:
+    newDivNotSelected.innerHTML = select.options[index].innerHTML;
+
+    //Adiciono o evento de clique na option
+    newDivNotSelected.addEventListener("click", function (e) {
+
+      var selectFromThisElement = this.parentNode.parentNode.getElementsByTagName("select")[0];
+      var numberOfOptionsFromThisElement = selectFromThisElement.length;
+
+      var prevousSelectedDiv = this.parentNode.previousSibling;
+
+      for (var indice = 0; indice < numberOfOptionsFromThisElement; indice++) {
+        if (selectFromThisElement.options[indice].innerHTML == this.innerHTML) {
+          selectFromThisElement.selectedIndex = indice;
+          prevousSelectedDiv.innerHTML = this.innerHTML;
+          divThatHoldAllNonSelectedOptionsFromClassName = this.parentNode.getElementsByClassName("same-as-selected");
+          numberOfOptionsNonSelected = divThatHoldAllNonSelectedOptionsFromClassName.length;
+          for (var indexOfNonSelectedOptions = 0; indexOfNonSelectedOptions < numberOfOptionsNonSelected; indexOfNonSelectedOptions++) {
+            divThatHoldAllNonSelectedOptionsFromClassName[indexOfNonSelectedOptions].removeAttribute("class");
           }
+          this.setAttribute("class", "same-as-selected");
+          break;
         }
-        prevousSelectedDiv.click();
-      });
-      newDivToHoldAllOptions.appendChild(newDivNotSelected);
-    }
-    parentSelect.appendChild(newDivToHoldAllOptions);
-
-    newDivSelected.addEventListener("click", function(e) {
-      //Para a propagação de recorrencias
-      e.stopPropagation();
-
-      //Fecha todos os selects anteriorment abertos
-      closeAllSelect(this, e.clientY);
-      //Faz a função: "apaga" ou "exibe" a classe. Se a classe existir, da HIDE, se não existir, insere
-      this.nextSibling.classList.toggle("select-hide");
-      this.classList.toggle("select-arrow-active");
-      
-    });
-    
-    function closeAllSelect(elmnt, y) {
-      if (!(elmnt instanceof HTMLDivElement) || y != 0){return;}
-
-
-      var allOptionsFromSelect = document.getElementById('idiomas');
-      var selectedOption = document.getElementsByClassName("select-items")[0].getElementsByClassName("same-as-selected")[0];
-      var valueOptionsFromSelect = [];
-
-      if (!selectedOption){return;}
-      for (var i=0; i< allOptionsFromSelect.length; i++){
-        valueOptionsFromSelect.push(
-          [allOptionsFromSelect[i].innerHTML, allOptionsFromSelect[i].value]
-        );
       }
-      var selectedIndex = valueOptionsFromSelect.findIndex(e => e[0] == selectedOption.innerHTML);
-      var nextLanguageToChange = valueOptionsFromSelect[selectedIndex];
+      prevousSelectedDiv.click();
+    });
+    newDivToHoldAllOptions.appendChild(newDivNotSelected);
+  }
+  parentSelect.appendChild(newDivToHoldAllOptions);
 
-      var x, y, i, xl, yl, arrNo = [];
-      x = document.getElementsByClassName("select-items");
-      y = document.getElementsByClassName("component-custom-select-selected");
-      xl = x.length;
-      yl = y.length;
-      if (elmnt == y[0]) { arrNo.push(0) }
+  newDivSelected.addEventListener("click", function (e) {
+    //Para a propagação de recorrencias
+    e.stopPropagation();
 
-      if (arrNo.indexOf(0)) { x[0].classList.add("select-hide"); }
+    //Fecha todos os selects anteriorment abertos
+    closeAllSelect(this, e.clientY);
+    //Faz a função: "apaga" ou "exibe" a classe. Se a classe existir, da HIDE, se não existir, insere
+    this.nextSibling.classList.toggle("select-hide");
+    this.classList.toggle("select-arrow-active");
 
-      changeLanguage(
-        nextLanguageToChange[1]
+  });
+
+  function closeAllSelect(elmnt, y) {
+    if (!(elmnt instanceof HTMLDivElement) || y != 0) { return; }
+
+
+    var allOptionsFromSelect = document.getElementById('idiomas');
+    var selectedOption = document.getElementsByClassName("select-items")[0].getElementsByClassName("same-as-selected")[0];
+    var valueOptionsFromSelect = [];
+
+    if (!selectedOption) { return; }
+    for (var i = 0; i < allOptionsFromSelect.length; i++) {
+      valueOptionsFromSelect.push(
+        [allOptionsFromSelect[i].innerHTML, allOptionsFromSelect[i].value]
       );
-
     }
+    var selectedIndex = valueOptionsFromSelect.findIndex(e => e[0] == selectedOption.innerHTML);
+    var nextLanguageToChange = valueOptionsFromSelect[selectedIndex];
 
-    /*if the user clicks anywhere outside the select box,
-    then close all select boxes:*/
-    document.addEventListener("click", closeAllSelect);
-  </script>
+    var x, y, i, xl, yl, arrNo = [];
+    x = document.getElementsByClassName("select-items");
+    y = document.getElementsByClassName("component-custom-select-selected");
+    xl = x.length;
+    yl = y.length;
+    if (elmnt == y[0]) { arrNo.push(0) }
 
-  <script type="module">
-    import { Heroes } from '../js/script.js';
-    var heroesObj = new Heroes();
-    const allText = heroesObj.allText();
-    
-    window.onload = function () {
-      window.fullText = allText;
-      //default: pt
-      changeLanguage("pt");
-    };
+    if (arrNo.indexOf(0)) { x[0].classList.add("select-hide"); }
 
-  </script>
+    changeLanguage(
+      nextLanguageToChange[1]
+    );
 
-  <script>
-    function changeLanguage(selectedLanguage){
+  }
 
-      var actualLanguage = fullText.filter( (elem) => elem.lang == selectedLanguage )[0];
-      Object.keys(actualLanguage).forEach(prop => {
-          var elem = document.getElementById(prop);
-          if (elem){
-            elem.innerHTML = actualLanguage[prop];
-          }
-      });     
+  /*if the user clicks anywhere outside the select box,
+  then close all select boxes:*/
+  document.addEventListener("click", closeAllSelect);
+</script>
 
+<!-- carregar toda a linguagem -->
+<script>
+  const allText = [
+    {
+      "lang": "pt",
+      "text-menu-game": "Jogo",
+      "text-menu-heroes": "Heróis",
+      "text-menu-news": "Novidades",
+      "text-menu-sports": "E-sport",
+      "text-selectLanguage": "Selecione o idioma",
+    },
+    {
+      "lang": "eng",
+      "text-menu-game": "Game",
+      "text-menu-heroes": "Heroes",
+      "text-menu-news": "News",
+      "text-menu-sports": "E-sport",
+      "text-selectLanguage": "Select the language",
+    },
+    {
+      "lang": "fr",
+      "text-menu-game": "Jeu",
+      "text-menu-heroes": "Héros et héroïnes",
+      "text-menu-news": "Actualités",
+      "text-menu-sports": "E-sport",
+      "text-selectLanguage": "Sélectionnez la langue",
+    },
+    {
+      "lang": "zh",
+      "text-menu-game": "游戏",
+      "text-menu-heroes": "英雄",
+      "text-menu-news": "新闻",
+      "text-menu-sports": "电子竞技",
+      "text-selectLanguage": "选择语言",
+    },
+    {
+      "lang": "hi",
+      "text-menu-game": "खेल",
+      "text-menu-heroes": "नायकों",
+      "text-menu-news": "समाचार",
+      "text-menu-sports": "खेल",
+      "text-selectLanguage": "भाषा चुनें",
     }
-  </script>
+  ];
+  window.onload = function () {
+    window.fullText = allText;
+    //default: pt
+    changeLanguage("pt");
+  };
+
+</script>
+
+<!-- mudar a linguagem -->
+<script>
+  function changeLanguage(selectedLanguage) {
+
+    showCarrosselInthatLanguage(selectedLanguage);
+    var actualLanguage = fullText.filter((elem) => elem.lang == selectedLanguage)[0];
+    Object.keys(actualLanguage).forEach(prop => {
+      var elem = document.getElementById(prop);
+      if (elem) {
+        elem.innerHTML = actualLanguage[prop];
+      }
+    });
+
+  }
+</script>
 
 </html>
