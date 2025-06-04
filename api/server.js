@@ -1,74 +1,59 @@
 const express = require('express');
-const session = require('express-session');
 const bodyParser = require('body-parser');
+const jwt = require('jsonwebtoken');
 
 const app = express();
 const PORT = 5174;
+const SECRET_KEY = 'dota2supersecretkey'; // idealmente, coloque em .env depois
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(session({
-  secret: 'dota2secret',
-  resave: false,
-  saveUninitialized: true
-}));
 
+// Middleware de autenticação
+function authenticateToken(req, res, next) {
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1]; // Formato: "Bearer TOKEN"
 
-// Index route
+    if (!token) return res.status(401).json({ error: 'Token não fornecido' });
+
+    jwt.verify(token, SECRET_KEY, (err, user) => {
+        if (err) return res.status(403).json({ error: 'Token inválido ou expirado' });
+        req.user = user;
+        next();
+    });
+}
+
+// Rota pública
 app.get('/', (req, res) => {
-  res.status(200).send({message: 'Bem vindo ao Dota 2 API!'});
+    res.status(200).json({ message: 'Bem-vindo ao Dota 2 API!' });
 });
 
-// Login page (GET)
-// app.get('/login', (req, res) => {
-//   res.send(`
-//     <form method="POST" action="/login">
-//       <input name="username" placeholder="Username" required />
-//       <input name="password" type="password" placeholder="Password" required />
-//       <button type="submit">Login</button>
-//     </form>
-//   `);
-// });
-
-// Login handler (POST)
+// Login (gera token)
 app.post('/login', (req, res) => {
-  const { username, password } = req.body;
-  // Simple check (replace with real authentication)
-  if (username === 'admin' && password === 'dota2') {
-    req.session.user = 'P4cotin';
-    res.redirect('/logged');
-  } else {
-    res.status(400).send({ error: 'Credenciais inválidas' });
-  }
+    const { username, password } = req.body;
+
+    // Autenticação simples (substituir por banco de dados depois)
+    if (username === 'admin' && password === 'dota2') {
+        const user = { username: 'P4cotin' };
+        const token = jwt.sign(user, SECRET_KEY, { expiresIn: '1h' });
+        res.status(200).json({ message: 'Login bem-sucedido', token });
+    } else {
+        res.status(400).json({ error: 'Credenciais inválidas' });
+    }
 });
 
-// Logged page (protected)
-app.get('/logged', (req, res) => {
-  if (req.session.user) {
-    res.status(200).send({ message: `Fala memo ${req.session.user}! você está logado tá.` });
-  } else {
-    res.status(401).json({ error: 'Sem autorização' });
-  }
+// Rota protegida: /logged
+app.get('/logged', authenticateToken, (req, res) => {
+    res.status(200).json({ message: `Fala memo ${req.user.username}! você está logado tá.` });
 });
 
-app.get('/heroes', (req, res) => {
-  if (req.session.user) {
-    res.send(`Fala maluco! ${req.session.user}! voce esta logado!. <a href="/logout">Logout</a>`);
-  } else {
-    res.status(401).json({ error: 'Sem autorização' });
-  }
+// Rota protegida: /heroes
+app.get('/heroes', authenticateToken, (req, res) => {
+    res.status(200).json({ message: `Fala maluco! ${req.user.username}! você está logado!` });
 });
 
-
-// Logout route
-app.get('/logout', (req, res) => {
-  req.session.destroy(() => {
-    res.redirect('/');
-  });
-});
-
+// Start server
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Server running on http://localhost:${PORT}`);
 });
-
