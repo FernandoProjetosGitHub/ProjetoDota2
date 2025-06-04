@@ -1,0 +1,1 @@
+docker run -it --rm -v "$PWD:$PWD" -w "$PWD" -p 5174:5174 -u $(id -u):$(id -g) node:lts bash
